@@ -1,0 +1,14 @@
+defaults: &defaults
+  app:
+    name: 'Awesome Startup'
+    company: 'Company, LCC'
+    company_url: 'http://mailchimp.com'
+
+development:
+  <<: *defaults
+
+test:
+  <<: *defaults
+
+production:
+  <<: *defaults

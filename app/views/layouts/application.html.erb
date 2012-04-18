@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title><%= Config.app.name %> Beta Signup</title>
+  <%= stylesheet_link_tag "application" %>
+  <link href="http://fonts.googleapis.com/css?family=Oxygen" rel="stylesheet" type="text/css" />
+  <%= csrf_meta_tags %>
+</head>
+<body>
+  <div class="container">
+
+    <!-- Header -->
+    <div class="row">
+      <div class="span7">
+        <div id="header" class="outside">
+          <h1><a href="/"><%= Config.app.name %></a></h1>
+        </div>
+      </div>
+      <div class="span5">
+        <div id="nav_header_user">
+        </div>
+      </div>
+    </div>
+
+    <!-- Content -->
+    <div class="row">
+      <div class="span4">
+        <div class="appframe iphone">
+          <%= image_tag('app/home.png') %>
+        </div>
+      </div>
+      <div class="span8">
+        <div class="hero-unit">
+
+          <h1>Change The World in 5 Minutes. Literally.</h1>
+          <p>Some blurb about how awesome your startup is and why its ssooooo cool</p>
+
+          <hr />
+          <h2>Get Notified at Launch</h2>
+          <form class="form-inline">
+            <div class="control-group">
+              <div class="controls">
+                <div class="input-append">
+                  <%= email_field_tag :email, '', placeholder: 'Email address', class: 'span4 btn-large' %>
+                  <%= submit_tag 'Notify Me &raquo;'.html_safe, class: 'btn btn-success btn-large' %>
+                </div>
+              </div>
+            </div>
+          </form>
+
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="span4">
+        <div class="well">
+          <h2>Feature One</h2>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce
+            bibendum leo sed enim mattis vitae ullamcorper felis pellentesque.
+            Sed porta eleifend diam sit amet tincidunt.
+          </p>
+        </div>
+      </div>
+      <div class="span4">
+        <div class="well">
+          <h2>Feature Two</h2>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce
+            bibendum leo sed enim mattis vitae ullamcorper felis pellentesque.
+            Sed porta eleifend diam sit amet tincidunt.
+          </p>
+        </div>
+      </div>
+      <div class="span4">
+        <div class="well">
+          <h2>Feature Three</h2>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce
+            bibendum leo sed enim mattis vitae ullamcorper felis pellentesque.
+            Sed porta eleifend diam sit amet tincidunt.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <div class="row">
+      <div class="span12">
+        <div id="footer">
+          <p><%= Config.app.name %> is a product of <a href="<%= Config.app.company_url %>"><%= Config.app.company %></a></p>
+        </div>
+      </div>
+    </div>
+
+  </div>
+  <!-- JavaScripts -->
+  <%= javascript_include_tag "application" %>
+</body>
+</html>
