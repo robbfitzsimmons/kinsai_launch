@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title><%= Config.app.name %> Beta Signup</title>
+  <title><%= Settings.app.name %> Beta Signup</title>
   <%= stylesheet_link_tag "application" %>
   <link href="http://fonts.googleapis.com/css?family=Oxygen" rel="stylesheet" type="text/css" />
   <%= csrf_meta_tags %>
@@ -13,7 +13,7 @@
     <div class="row">
       <div class="span7">
         <div id="header" class="outside">
-          <h1><a href="/"><%= Config.app.name %></a></h1>
+          <h1><a href="/"><%= Settings.app.name %></a></h1>
         </div>
       </div>
       <div class="span5">
@@ -32,7 +32,8 @@
       <div class="span8">
         <div class="hero-unit">
 
-          <h1>Change The World in 5 Minutes. Literally.</h1>
+          <h1>Change The World in 5 Minutes.</h1>
+          <h2>Literally. The Entire World.</h2>
           <p>Some blurb about how awesome your startup is and why its ssooooo cool</p>
 
           <hr />
@@ -89,7 +90,7 @@
     <div class="row">
       <div class="span12">
         <div id="footer">
-          <p><%= Config.app.name %> is a product of <a href="<%= Config.app.company_url %>"><%= Config.app.company %></a></p>
+          <p><%= Settings.app.name %> is a product of <a href="<%= Settings.app.company_url %>"><%= Settings.app.company %></a></p>
         </div>
       </div>
     </div>

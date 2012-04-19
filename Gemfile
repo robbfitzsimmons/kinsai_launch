@@ -10,6 +10,7 @@ gem 'jquery-rails',         '~> 2.0.1' # Use jquery
 gem 'simple_form',          '~> 2.0.1'
 gem 'bootstrap-sass-rails', '~> 2.0.2.2'
 gem 'settingslogic'
+gem 'hominid'
 
 # Gems used only for assets and not required
 # in production environments by default.
