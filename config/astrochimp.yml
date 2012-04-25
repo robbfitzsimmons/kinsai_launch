@@ -1,7 +1,10 @@
 defaults: &defaults
+  mailchimp_list_id: 'b5ae30b54c'
+  mailchimp_api_key: '9d117bbb106cfd7870552785f443cc38-us1'
   app:
+    signup_success_notice: "Thanks! We'll drop you a line when we launch!"
     name: 'Awesome Startup'
-    company: 'Company, LCC'
+    company: 'Company, LLC'
     company_url: 'http://mailchimp.com'
 
 development:

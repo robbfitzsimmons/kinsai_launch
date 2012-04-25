@@ -26,7 +26,7 @@
     <div class="row">
       <div class="span4">
         <div class="appframe iphone">
-          <%= image_tag('app/home.png') %>
+          <%= image_tag('Astrochimp-phone-splash.png') %>
         </div>
       </div>
       <div class="span8">
@@ -34,20 +34,12 @@
 
           <h1>Change The World in 5 Minutes.</h1>
           <h2>Literally. The Entire World.</h2>
-          <p>Some blurb about how awesome your startup is and why its ssooooo cool</p>
+          <p>Rock the world so hard it turns upside down. Like Australia.</p>
 
           <hr />
-          <h2>Get Notified at Launch</h2>
-          <form class="form-inline">
-            <div class="control-group">
-              <div class="controls">
-                <div class="input-append">
-                  <%= email_field_tag :email, '', placeholder: 'Email address', class: 'span4 btn-large' %>
-                  <%= submit_tag 'Notify Me &raquo;'.html_safe, class: 'btn btn-success btn-large' %>
-                </div>
-              </div>
-            </div>
-          </form>
+
+          <%= render 'layouts/messages' %>
+          <%= yield %>
 
         </div>
       </div>
@@ -88,10 +80,11 @@
 
     <!-- Footer -->
     <div class="row">
-      <div class="span12">
-        <div id="footer">
-          <p><%= Settings.app.name %> is a product of <a href="<%= Settings.app.company_url %>"><%= Settings.app.company %></a></p>
-        </div>
+      <div class="span6 company">
+        <p><%= Settings.app.name %> is a product of <a href="<%= Settings.app.company_url %>"><%= Settings.app.company %></a></p>
+      </div>
+      <div class="span6 credits">
+        <p><a href="http://mailchimp.com">Powered by MailChimp</a></p>
       </div>
     </div>
 

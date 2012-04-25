@@ -11,6 +11,7 @@ gem 'simple_form',          '~> 2.0.1'
 gem 'bootstrap-sass-rails', '~> 2.0.2.2'
 gem 'settingslogic'
 gem 'hominid'
+gem 'valid_email'
 
 # Gems used only for assets and not required
 # in production environments by default.
