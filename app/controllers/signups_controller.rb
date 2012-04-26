@@ -2,23 +2,28 @@ class SignupsController < ApplicationController
   # GET /signups
   # GET /signups.json
   def index
-    @signups = Signup.all
+    redirect_to root_url
 
-    respond_to do |format|
-      format.html # index.html.erb
-      format.json { render json: @signups }
-    end
+    # @signups = Signup.all
+
+    # respond_to do |format|
+    #   # format.html # index.html.erb
+    #   format.html { render text: 'No list yet :)' }
+    #   format.json { render json: @signups }
+    # end
   end
 
   # GET /signups/1
   # GET /signups/1.json
   def show
-    @signup = Signup.find(params[:id])
+    redirect_to root_url
 
-    respond_to do |format|
-      format.html # show.html.erb
-      format.json { render json: @signup }
-    end
+    # @signup = Signup.find(params[:id])
+
+    # respond_to do |format|
+    #   format.html # show.html.erb
+    #   # format.json { render json: @signup }
+    # end
   end
 
   # GET /signups/new
@@ -36,18 +41,27 @@ class SignupsController < ApplicationController
   # POST /signups.json
   def create
     @signup = Signup.new(params[:signup])
+    @signup.status = Signup::STATUS_NEW
 
     respond_to do |format|
       if @signup.save
 
-        h = Hominid::API.new(Settings.mailchimp_api_key, {:secure => true, :timeout => 60})
-        h.list_subscribe(Settings.mailchimp_list_id, @signup.email)
+        # Handle any MailChimp errors
+        begin
+          h = Hominid::API.new(Settings.mailchimp_api_key, {:secure => true, :timeout => 60})
+          h.list_subscribe(Settings.mailchimp_list_id, @signup.email, {}, 'html', false)
+        rescue Hominid::APIError => e
+          @signup.delete # Don't save the record on error - it wasn't subscribed to the MailChimp list
+          @signup.errors.add(:email, 'MailChimp API Error: ' + e.message)
+        end
+      end
 
-        format.html { redirect_to @signup, notice: Settings.app.signup_success_notice }
-        format.json { render json: @signup, status: :created, location: @signup }
-      else
+      if @signup.errors.any?
         format.html { render action: "new" }
         format.json { render json: @signup.errors, status: :unprocessable_entity }
+      else
+        format.html { redirect_to root_url, notice: Settings.app.signup_success_notice }
+        format.json { render json: @signup, status: :created, location: @signup }
       end
     end
   end

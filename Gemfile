@@ -5,7 +5,7 @@ gem 'rails', '3.2.2'
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
-gem 'sqlite3'
+gem 'pg'
 gem 'jquery-rails',         '~> 2.0.1' # Use jquery
 gem 'simple_form',          '~> 2.0.1'
 gem 'bootstrap-sass-rails', '~> 2.0.2.2'

@@ -6,6 +6,8 @@ defaults: &defaults
     name: 'Awesome Startup'
     company: 'Company, LLC'
     company_url: 'http://mailchimp.com'
+    twitter_user: 'ChurchMint'
+    facebook_url: 'http://www.facebook.com/churchmint'
 
 development:
   <<: *defaults
