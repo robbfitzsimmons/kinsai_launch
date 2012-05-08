@@ -48,8 +48,8 @@ class SignupsController < ApplicationController
 
         # Handle any MailChimp errors
         begin
-          h = Hominid::API.new(Settings.mailchimp_api_key, {:secure => true, :timeout => 60})
-          h.list_subscribe(Settings.mailchimp_list_id, @signup.email, {}, 'html', false)
+          h = Hominid::API.new(Settings.mailchimp.api_key, {:secure => true, :timeout => 60})
+          h.list_subscribe(Settings.mailchimp.list_id, @signup.email, {}, Settings.mailchimp.email_format, Settings.mailchimp.email_double_optin)
         rescue Hominid::APIError => e
           @signup.delete # Don't save the record on error - it wasn't subscribed to the MailChimp list
           @signup.errors.add(:email, 'MailChimp API Error: ' + e.message)
@@ -60,6 +60,8 @@ class SignupsController < ApplicationController
         format.html { render action: "new" }
         format.json { render json: @signup.errors, status: :unprocessable_entity }
       else
+        @signup.update_attribute(:status, Signup::STATUS_SUBSCRIBED)
+
         format.html { redirect_to root_url, notice: Settings.app.signup_success_notice }
         format.json { render json: @signup, status: :created, location: @signup }
       end

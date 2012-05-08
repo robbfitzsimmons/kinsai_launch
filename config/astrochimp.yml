@@ -1,13 +1,17 @@
 defaults: &defaults
-  mailchimp_list_id: 'b5ae30b54c'
-  mailchimp_api_key: '9d117bbb106cfd7870552785f443cc38-us1'
+  mailchimp:
+    list_id: 'b5ae30b54c'
+    api_key: '9d117bbb106cfd7870552785f443cc38-us1'
+    email_format: 'html'
+    email_double_optin: false # true will require user to confirm their email address
   app:
     signup_success_notice: "Thanks! We'll drop you a line when we launch!"
     name: 'Awesome Startup'
     company: 'Company, LLC'
     company_url: 'http://mailchimp.com'
-    twitter_user: 'ChurchMint'
-    facebook_url: 'http://www.facebook.com/churchmint'
+    twitter_user: 'Brightbit'
+    facebook_url: 'http://www.facebook.com/brightbit'
+    google_analytics_code: ''
 
 development:
   <<: *defaults
