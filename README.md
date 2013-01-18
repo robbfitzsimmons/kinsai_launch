@@ -1,4 +1,5 @@
-astrochimp
-==========
+Kinsai signup page
+==================
 
-Signup splash page rails app for startups
+Sign-up page for a delicious new project.
+

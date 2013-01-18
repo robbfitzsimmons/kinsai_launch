@@ -5,12 +5,12 @@ defaults: &defaults
     email_format: 'html'
     email_double_optin: false # true will require user to confirm their email address
   app:
-    signup_success_notice: "Thanks! We'll drop you a line when we launch!"
-    name: 'Awesome Startup'
-    company: 'Company, LLC'
-    company_url: 'http://mailchimp.com'
-    twitter_user: 'Brightbit'
-    facebook_url: 'http://www.facebook.com/brightbit'
+    signup_success_notice: "Thanks for signing up! We'll send you more information soon."
+    name: 'Kinsai'
+    company: 'Kinsai by Jason Doo'
+    company_url: 'http://kinsaiboston.com'
+    twitter_user: ''
+    facebook_url: ''
     google_analytics_code: ''
 
 development:
