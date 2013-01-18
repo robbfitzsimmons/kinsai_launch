@@ -1,4 +1,3 @@
-<h2>Get Notified at Launch</h2>
 <%= form_for(@signup) do |f| %>
   <% if @signup.errors.any? %>
     <div class="alert alert-error">
@@ -12,8 +11,8 @@
   <div class="control-group">
     <div class="controls">
       <div class="input-append">
-        <%= text_field_tag :email, (params[:signup][:email] if params[:signup] or nil), name: 'signup[email]', placeholder: 'Email address', class: 'span4 btn-large' %>
-        <%= submit_tag 'Notify Me &raquo;'.html_safe, class: 'btn btn-success btn-large' %>
+        <%= text_field_tag :email, (params[:signup][:email] if params[:signup] or nil), name: 'signup[email]', placeholder: 'Leave your email for occasional updates.', class: 'span4 btn-large' %>
+        <%= submit_tag 'Submit &raquo;'.html_safe, class: 'btn btn-success btn-large' %>
       </div>
     </div>
   </div>
