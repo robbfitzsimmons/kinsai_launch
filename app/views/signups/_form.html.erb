@@ -1,18 +1,20 @@
 <%= form_for(@signup) do |f| %>
-  <% if @signup.errors.any? %>
-    <div class="alert alert-error">
-      <a class="close" data-dismiss="alert">×</a>
-      <% @signup.errors.full_messages.each do |msg| %>
-        <%= content_tag :div, msg, :id => "flash_error" if msg.is_a?(String) %>
-      <% end %>
-    </div>
-  <% end %>
+  <div class="span6 center">
+    <% if @signup.errors.any? %>
+      <div class="alert alert-error">
+        <a class="close" data-dismiss="alert">×</a>
+        <% @signup.errors.full_messages.each do |msg| %>
+          <%= content_tag :div, msg, :id => "flash_error" if msg.is_a?(String) %>
+        <% end %>
+      </div>
+    <% end %>
 
-  <div class="control-group">
-    <div class="controls">
-      <div class="input-append"> 
-        <%= text_field_tag :email, (params[:signup][:email] if params[:signup] or nil), name: 'signup[email]', placeholder: 'Leave your email for occasional updates.', class: 'span4 btn-large' %>
-        <%= submit_tag 'Submit &raquo;'.html_safe, class: 'btn btn-success btn-large' %>
+    <div class="control-group">
+      <div class="controls">
+        <div class="input-append"> 
+          <%= text_field_tag :email, (params[:signup][:email] if params[:signup] or nil), name: 'signup[email]', placeholder: 'Leave your email for occasional updates.', class: 'span4 btn-large' %>
+          <%= submit_tag 'Submit &raquo;'.html_safe, class: 'btn btn-success btn-large', id: 'submit' %>
+        </div>
       </div>
     </div>
   </div>

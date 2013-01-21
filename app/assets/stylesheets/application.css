@@ -35,15 +35,7 @@ h1, h2, h3, p{
   margin: 0 auto;
 }
 
-.input-append{
-  display: inline;
-  margin: 0 auto;
-}
-
-.btn {
-  margin-top: -9px;
-}
-
-.input[type="submit"].btn{
-  background-color: #333333;
+#inquiries{
+  margin-top: 30px;
+  margin-bottom: -10px;
 }
