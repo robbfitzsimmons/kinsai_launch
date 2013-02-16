@@ -1,7 +1,7 @@
 defaults: &defaults
   mailchimp:
-    list_id: 'b5ae30b54c'
-    api_key: '9d117bbb106cfd7870552785f443cc38-us1'
+    list_id: '0dd4d49cf3'
+    api_key: '27151efa6accb27bdaab7a18e1cdecb2-us6'
     email_format: 'html'
     email_double_optin: false # true will require user to confirm their email address
   app:
